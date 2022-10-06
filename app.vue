@@ -2,8 +2,8 @@
   <div class="wrapper">
     <header>
       <!-- <img src="images/bg-stars.jpg" alt="" class="background" /> -->
-      <img src="images/red-giant.png" alt="" class="foreground" />
-      <img src="images/scout.png" alt="" class="ship" />
+      <img src="/images/red-giant.png" alt="" class="foreground" />
+      <img src="/images/scout.png" alt="" class="ship" />
       <div class="hero-text"> 
         <h1>FLY FREE!</h1>
         <h2>Quality. Tradition. Reliability.</h2>
@@ -38,10 +38,7 @@
 
 <script>
 
-// import HeroSection from './HeroSection.vue'
 export default {
-  // components: { HeroSection },
-  // name: 'IndexPage'
 };
 </script>
 
