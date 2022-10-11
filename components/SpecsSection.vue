@@ -110,5 +110,6 @@ export default {};
 .spec-table {
   width: 100%;
   height: 100%;
+  font-size: 1rem;
 }
 </style>
