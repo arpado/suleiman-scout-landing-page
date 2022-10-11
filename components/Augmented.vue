@@ -8,10 +8,22 @@
 "
     >
       <div class="box">
-        <slot />
+        <!-- <slot /> -->
         <!-- <router-view ></router-view> -->
         <!-- <NuxtChild /> -->
+        <swiper
+          class="swiper"
+          :slides-per-view="1"
+          :space-between="0"
+          @swiper="onSwiper"
+          @slideChange="onSlideChange"
+        >
+          <swiper-slide><SpecsSection /></swiper-slide>
+          <swiper-slide><ShowcaseSection /></swiper-slide>
+          <swiper-slide><OrderSection /></swiper-slide>
+        </swiper>
       </div>
+
       <div class="btns">
         <NuxtLink to="/SpecsSection" class="nuxt-link">
           <div class="btn" data-augmented-ui="all-hexangle-up border">1</div>
@@ -31,8 +43,30 @@
 
 <script>
 // import SpecsSection from './SpecsSection.vue';
+  // Import Swiper Vue.js components
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
-export default {};
+  // Import Swiper styles
+  import 'swiper/css';
+
+export default {
+  components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      const onSwiper = (swiper) => {
+        console.log(swiper);
+      };
+      const onSlideChange = () => {
+        console.log('slide change');
+      };
+      return {
+        onSwiper,
+        onSlideChange,
+      };
+    },
+};
 </script>
 
 <style scoped>
@@ -97,6 +131,11 @@ export default {};
     left: 10%; */
   border: 1px solid var(--main-lightblue);
   overflow-y: scroll;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 .btns {
   width: 85%;
